@@ -39,6 +39,14 @@ create table loan(
     primary key(loan_number),
     foreign key(branch_name) references branch(branch_name)
     );
+
+create table borrower(
+customer_name varchar(20),
+loan_number int,
+primary key(customer_name,loan_number),
+foreign key(customer_name) references bankcustomer(customer_name),
+foreign key(loan_number) references loan(loan_number)
+);
     
 insert into branch
 values('SBI_Chamrajpet','Bangalore',50000),
