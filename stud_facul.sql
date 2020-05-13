@@ -85,7 +85,7 @@ select distinct sname
 select distinct f.fname
    from faculty f
    where not exists((select c.room from class c)
-   minus
+   not in
    (select c1.room from class c1 where c1.fid=f.fid));
 
 select distinct fname 
