@@ -1,18 +1,18 @@
 create table student
 (
- snum int(10),
+ snum int,
  sname varchar(20),
  major varchar(20),
  lvl varchar(3),
- age int(2),
+ age int,
  primary key(snum)
 );
 
 create table faculty
 (
- fid int(10),
+ fid int,
  fname varchar(20),
- deptid int(1),
+ deptid int,
  primary key(fid)
 ); 
 
@@ -20,15 +20,15 @@ create table class
 (
  cname varchar(5),
  meets_at timestamp,
- room int(3),
- fid int(10)
+ room int,
+ fid int,
  primary key(cname),
  foreign key(fid) references faculty(fid)
 );
 
 create table enrolled
 (
- snum int(10),
+ snum int,
  cname varchar(5),
  primary key(snum),
  foreign key(snum) references student(snum),
