@@ -63,9 +63,9 @@ insert into car
 
  insert into owns
  values('A01','KA052250'),
- ('A02','KA031181'),
- ('A03','KA095477'),
- ('A04','KA053408'),
+ ('A02','KA053408'),
+ ('A03','KA031181'),
+ ('A04','KA095477'),
  ('A05','KA041702');
  
 insert into accident
@@ -77,9 +77,9 @@ insert into accident
 
 insert into participated
  values('A01','KA052250',11,10000),
- ('A02','KA031181',12,50000),
+ ('A02','KA053408',12,50000),
  ('A03','KA095477',13,25000),
- ('A04','KA053408',14,3000),
+ ('A04','KA031181',14,3000),
  ('A05','KA041702',15,5000);
  
  show tables;
@@ -89,7 +89,7 @@ select * from owns;
 select * from accident;
 select * from participated;
 
-update participated set damage_amount = 25000 where reg_num = 'KA031181' and report_num = 12;
+update participated set damage_amount = 25000 where reg_num = 'KA053408' and report_num = 12;
 insert into accident 
 	values (19,'11-DEC-03','bcder');
 select count(distinct driver_id) count from participated, accident where participated.report_num = accident.report_num and accident_date like '%08';
